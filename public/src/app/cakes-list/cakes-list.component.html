@@ -1,0 +1,16 @@
+<h2>Rate my Cakes!</h2>
+<p>Submit a cake to be rated</p>
+<form (submit)='submitCake()'>
+  <p>Baker name: 
+    <input type="text" name="name" [(ngModel)]='newCake.name' #name='ngModel'>
+  </p>
+  <p>Image url:
+    <input type="text" name="imageUrl" [(ngModel)]='newCake.imageUrl'>
+  </p>
+  <input type="submit">
+</form>
+<div>
+  <div *ngFor="let cake of cakes">
+    <app-cakes-review [myCake]='cake'></app-cakes-review>
+  </div>
+</div>
